@@ -34,68 +34,66 @@ let currentStage = 0;
 let isDodgingMode = false;
 
 function updateStage(index) {
-  question.innerText = stages[index].text;
-  gif.src = stages[index].gif;
+    question.innerText = stages[index].text;
+    gif.src = stages[index].gif;
+
 }
 
 function dodgeButton() {
-  if (!isDodgingMode) return;
-  // current button position details relative to the viewpoint
-  const rect = noBtn.getBoundingClientRect();
+  //
+    if (!isDodgingMode) return;
+ // current button position details relative to the viewpoint
+    const rect = noBtn.getBoundingClientRect();
 
-  const padding = 30;
-  const screenWidth = window.innerWidth;
-  const screenHeight = window.innerHeight;
+   const padding = 30;
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
 
-  // Pick a completely random absolute screen location
-  const targetX =
-    Math.random() * (screenWidth - rect.width - padding * 2) + padding;
-  const targetY =
-    Math.random() * (screenHeight - rect.height - padding * 2) + padding;
+            // Pick a completely random absolute screen location
+            const targetX = Math.random() * (screenWidth - rect.width - padding * 2) + padding;
+            const targetY = Math.random() * (screenHeight - rect.height - padding * 2) + padding;
 
-  // Calculate the exact offset distance from its original starting location
-  // This safely bypasses mobile flexbox constraints completely
-  const originalX =
-    rect.left -
-    (noBtn.style.transform ? parseFloat(noBtn.dataset.translateX || 0) : 0);
-  const originalY =
-    rect.top -
-    (noBtn.style.transform ? parseFloat(noBtn.dataset.translateY || 0) : 0);
+            // Calculate the exact offset distance from its original starting location
+            // This safely bypasses mobile flexbox constraints completely
+            const originalX = rect.left - (noBtn.style.transform ? parseFloat(noBtn.dataset.translateX || 0) : 0);
+            const originalY = rect.top - (noBtn.style.transform ? parseFloat(noBtn.dataset.translateY || 0) : 0);
 
-  const moveX = targetX - originalX;
-  const moveY = targetY - originalY;
+            const moveX = targetX - originalX;
+            const moveY = targetY - originalY;
 
-  // Save the current translations to keep track of changes
-  noBtn.dataset.translateX = moveX;
-  noBtn.dataset.translateY = moveY;
+            // Save the current translations to keep track of changes
+            noBtn.dataset.translateX = moveX;
+            noBtn.dataset.translateY = moveY;
 
-  // Use translate3d to move it perfectly on both horizontal and vertical axes
-  noBtn.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+            // Use translate3d to move it perfectly on both horizontal and vertical axes
+            noBtn.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+
 }
+
 
 // When "No" is clicked
 noBtn.addEventListener("click", (e) => {
-  //   noClickCount++;
-  if (isDodgingMode) {
-    e.preventDefault();
-    return;
-  }
-  if (currentStage < stages.length - 1) {
-    currentStage++;
-    updateStage(currentStage);
-
-    if (currentStage === stages.length - 1) {
-      isDodgingMode = true;
+    //   noClickCount++;
+    if (isDodgingMode) {
+        e.preventDefault();
+        return;
     }
-  }
+    if (currentStage < stages.length - 1) {
+        currentStage++;
+        updateStage(currentStage);
+
+        if (currentStage === stages.length - 1) {
+            isDodgingMode = true;
+        }
+    }
 });
 
-noBtn.addEventListener("mouseenter", dodgeButton);
-noBtn.addEventListener("touchstart", (e) => {
-  if (isDodgingMode) {
-    e.preventDefault();
-    dodgeButton();
-  }
+noBtn.addEventListener('mouseenter', dodgeButton);
+noBtn.addEventListener('touchstart', (e) => {
+    if (isDodgingMode) {
+        e.preventDefault();
+        dodgeButton();
+    }
 });
 
 // When "Yes" is clicked
