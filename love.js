@@ -6,27 +6,27 @@ const gif = document.getElementById("gif");
 const stages = [
   {
     text: "Do you love me? 🥺",
-    gif: "/gifs/cute-cat.gif",
+    gif: "gifs/cute-cat.gif",
   },
   {
     text: "Are you sure? 💔",
-    gif: "/gifs/bubu.gif",
+    gif: "gifs/bubu.gif",
   },
   {
     text: "Really sure?? 😢",
-    gif: "/gifs/crying-baby.gif",
+    gif: "gifs/crying-baby.gif",
   },
   {
     text: "Think again! 😭",
-    gif: "/gifs/crying-cat.gif",
+    gif: "gifs/crying-cat.gif",
   },
   {
     text: "Please? 🎀",
-    gif: "/gifs/puss-in-boots-please.gif",
+    gif: "gifs/puss-in-boots-please.gif",
   },
   {
     text: "Hehe, you can't click No anymore! 😜",
-    gif: "/gifs/flirt-hello.gif",
+    gif: "gifs/flirt-hello.gif",
   },
 ];
 
@@ -100,7 +100,7 @@ noBtn.addEventListener('touchstart', (e) => {
 yesBtn.addEventListener("click", () => {
   question.innerText = "Yay! I knew it! I love you too! ❤️";
   gif.src =
-    "/gifs/bear-kiss-bear-kisses.gif";
+    "gifs/bear-kiss-bear-kisses.gif";
   yesBtn.style.display = "none";
   noBtn.style.display = "none";
 });
