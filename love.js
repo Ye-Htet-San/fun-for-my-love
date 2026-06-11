@@ -102,7 +102,7 @@ noBtn.addEventListener("touchstart", (e) => {
 yesBtn.addEventListener("click", () => {
   question.innerText = "Yay! I knew it! I love you too! ❤️";
   gif.src =
-    "https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif";
+    "/gifs/bear-kiss-bear-kisses.gif";
   yesBtn.style.display = "none";
   noBtn.style.display = "none";
 });
