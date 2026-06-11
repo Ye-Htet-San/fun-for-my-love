@@ -104,3 +104,13 @@ yesBtn.addEventListener("click", () => {
   yesBtn.style.display = "none";
   noBtn.style.display = "none";
 });
+
+// Preload all stage GIFs in the background
+stages.forEach((stage) => {
+  const img = new Image();
+  img.src = stage.gif;
+});
+
+// Also preload the final "Yes" button GIF
+const finalImg = new Image();
+finalImg.src = "gifs/bear-kiss-bear-kisses.gif";
