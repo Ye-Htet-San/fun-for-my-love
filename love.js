@@ -6,27 +6,27 @@ const gif = document.getElementById("gif");
 const stages = [
   {
     text: "Do you love me? 🥺",
-    gif: "https://media.tenor.com/Z8hzZxcO5-cAAAAi/peach-cat-cute.gif",
+    gif: "/gifs/cute-cat.gif",
   },
   {
     text: "Are you sure? 💔",
-    gif: "https://media1.tenor.com/m/YNqzKzPOLTsAAAAC/emote.gif",
+    gif: "/gifs/bubu.gif",
   },
   {
     text: "Really sure?? 😢",
-    gif: "https://media1.tenor.com/m/q263C__wRg4AAAAC/babycrying-baby.gif",
+    gif: "/gifs/crying-baby.gif",
   },
   {
     text: "Think again! 😭",
-    gif: "https://media1.tenor.com/m/D_yuP4xjddsAAAAd/crying-vaughn-chat.gif",
+    gif: "/gifs/crying-cat.gif",
   },
   {
     text: "Please? 🎀",
-    gif: "https://media1.tenor.com/m/heEyHbV8iaUAAAAC/puss-in-boots-shrek.gif",
+    gif: "/gifs/puss-in-boots-please.gif",
   },
   {
     text: "Hehe, you can't click No anymore! 😜",
-    gif: "https://media1.tenor.com/m/1LzKSgP6v2wAAAAC/flirt-hello.gif",
+    gif: "/gifs/flirt-hello.gif",
   },
 ];
 
